@@ -1,0 +1,66 @@
+# .gitignore for ASP.NET Core Web API / .NET projects
+
+## Build / output
+**/bin/
+**/obj/
+**/out/
+**/artifacts/
+**/publish/
+**/*.exe
+**/*.dll
+**/*.pdb
+
+## Visual Studio
+*/.vs/
+*/*.suo
+*/*.user
+*/*.userosscache
+*/*.sln.docstates
+
+## Rider
+*/.idea/
+*/*.sln.iml
+*/*.DotSettings.user
+
+## VS Code (keep workspace settings tracked if you want)
+*/.vscode/*
+*/!.vscode/settings.json
+*/!.vscode/tasks.json
+*/!.vscode/launch.json
+*/!.vscode/extensions.json
+
+## NuGet / packages
+*/packages/
+*/*.nupkg
+*/.nuget/
+*/project.lock.json
+*/packages.lock.json
+
+## ASP.NET / Secrets / config
+*/appsettings.*.json
+*/secrets.json
+
+## Entity Framework / Local DB
+*/*.db
+*/*.mdf
+*/*.ldf
+*/*.sqlite
+*/*.db-journal
+
+## Logs and telemetry
+*/*.log
+*/*.trace
+
+## Tooling / other
+*/*.userprefs
+*/*.ide.*
+*/.vscode-test/
+*/*.psess
+*/*.vsp
+*/TestResults/
+
+## OS files
+*/Thumbs.db
+*/ehthumbs.db
+*/Desktop.ini
+*/.DS_Store
