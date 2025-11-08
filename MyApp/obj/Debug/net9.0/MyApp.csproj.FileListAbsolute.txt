@@ -1,0 +1,14 @@
+F:\dotNetProjects\asp.net api\MyApp\bin\Debug\net9.0\MyApp.exe
+F:\dotNetProjects\asp.net api\MyApp\bin\Debug\net9.0\MyApp.deps.json
+F:\dotNetProjects\asp.net api\MyApp\bin\Debug\net9.0\MyApp.runtimeconfig.json
+F:\dotNetProjects\asp.net api\MyApp\bin\Debug\net9.0\MyApp.dll
+F:\dotNetProjects\asp.net api\MyApp\bin\Debug\net9.0\MyApp.pdb
+F:\dotNetProjects\asp.net api\MyApp\obj\Debug\net9.0\MyApp.GeneratedMSBuildEditorConfig.editorconfig
+F:\dotNetProjects\asp.net api\MyApp\obj\Debug\net9.0\MyApp.AssemblyInfoInputs.cache
+F:\dotNetProjects\asp.net api\MyApp\obj\Debug\net9.0\MyApp.AssemblyInfo.cs
+F:\dotNetProjects\asp.net api\MyApp\obj\Debug\net9.0\MyApp.csproj.CoreCompileInputs.cache
+F:\dotNetProjects\asp.net api\MyApp\obj\Debug\net9.0\MyApp.dll
+F:\dotNetProjects\asp.net api\MyApp\obj\Debug\net9.0\refint\MyApp.dll
+F:\dotNetProjects\asp.net api\MyApp\obj\Debug\net9.0\MyApp.pdb
+F:\dotNetProjects\asp.net api\MyApp\obj\Debug\net9.0\MyApp.genruntimeconfig.cache
+F:\dotNetProjects\asp.net api\MyApp\obj\Debug\net9.0\ref\MyApp.dll
