@@ -1,6 +1,21 @@
 @ContactApi_HostAddress = http://localhost:5139
 
-GET {{ContactApi_HostAddress}}/weatherforecast/
+### Get all contacts
+GET {{ContactApi_HostAddress}}/api/contacts
 Accept: application/json
 
-###
+### Search contacts with pagination, filtering, and sorting
+GET {{ContactApi_HostAddress}}/api/contacts/search?page=1&pageSize=5
+Accept: application/json
+
+### Search contacts with keyword filter
+GET {{ContactApi_HostAddress}}/api/contacts/search?keyword=rahim
+Accept: application/json
+
+### Search contacts with sorting
+GET {{ContactApi_HostAddress}}/api/contacts/search?sortBy=phone&sortOrder=desc
+Accept: application/json
+
+### Search contacts with keyword, pagination, and sorting
+GET {{ContactApi_HostAddress}}/api/contacts/search?keyword=a&page=2&pageSize=3&sortOrder=desc
+Accept: application/json
