@@ -19,3 +19,29 @@ Accept: application/json
 ### Search contacts with keyword, pagination, and sorting
 GET {{ContactApi_HostAddress}}/api/contacts/search?keyword=a&page=2&pageSize=3&sortOrder=desc
 Accept: application/json
+
+
+### User Registration
+POST {{ContactApi_HostAddress}}/api/auth/register
+Content-Type: application/json
+
+{
+    "username": "newuser",
+    "password": "SecurePassword123"
+}
+
+### User Login
+POST {{ContactApi_HostAddress}}/api/auth/login
+Content-Type: application/json
+
+{
+    "username": "newuser",
+    "password": "SecurePassword123"
+}
+
+### Get user details
+GET {{ContactApi_HostAddress}}/api/auth/user
+Accept: application/json
+# Authorization: Bearer {{token}}
+
+### ContactApi/Program.cs

@@ -2,8 +2,30 @@ using Microsoft.EntityFrameworkCore;
 using ContactApi.Data;
 using ContactApi.Services;
 using ContactApi.Repositories;
+using Microsoft.IdentityModel.Tokens;
+using System.Text;
+using Microsoft.AspNetCore.Authentication.JwtBearer;
 
 var builder = WebApplication.CreateBuilder(args);
+
+// jwt configuration
+var jwtSettings = builder.Configuration.GetSection("Jwt");
+var jwtKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(jwtSettings["Key"] ?? throw new Exception("JWT Key not found in configuration.")));
+
+builder.Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
+    .AddJwtBearer(options =>
+    {
+        options.TokenValidationParameters = new TokenValidationParameters
+        {
+            ValidateIssuer = true,
+            ValidateAudience = true,
+            ValidateLifetime = true,
+            ValidateIssuerSigningKey = true,
+            ValidIssuer = jwtSettings["Issuer"],
+            ValidAudience = jwtSettings["Audience"],
+            IssuerSigningKey = jwtKey
+        };
+    });
 
 // connection string
 var connectionString = builder.Configuration.GetConnectionString("DefaultConnection");
@@ -12,6 +34,7 @@ var connectionString = builder.Configuration.GetConnectionString("DefaultConnect
 // Learn more about configuring OpenAPI at https://aka.ms/aspnet/openapi
 builder.Services.AddOpenApi();
 builder.Services.AddScoped<IContactService, ContactService>();
+builder.Services.AddScoped<IAuthService, AuthService>();
 builder.Services.AddControllers();
 builder.Services.AddDbContext<AppDbContext>(options =>
     options.UseNpgsql(connectionString)
@@ -27,6 +50,8 @@ if (app.Environment.IsDevelopment())
 }
 
 app.UseHttpsRedirection();
+app.UseAuthentication();
+app.UseAuthorization();
 
 app.MapControllers();
 // var summaries = new[]

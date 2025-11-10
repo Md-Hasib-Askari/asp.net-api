@@ -1,10 +1,12 @@
-namespace ContactApi.Controllers;
-
+using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Mvc;
 using ContactApi.DTOs;
 using ContactApi.Models;
 using ContactApi.Services;
-using Microsoft.AspNetCore.Mvc;
 
+namespace ContactApi.Controllers;
+
+[Authorize]
 [ApiController]
 [Route("api/[controller]")]
 public class ContactsController : ControllerBase
